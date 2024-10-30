@@ -127,6 +127,7 @@
 import {FilterValuesType, TaskType} from "./App";
 import {useState, KeyboardEvent, ChangeEvent} from "react";
 import {Button} from "./Button";
+import {CurrentTask} from "./CurrentTask";
 
 
 type PropsType = {
@@ -177,11 +178,11 @@ export const Todolist = ({title, tasks, removeTask, changeFilter, addTask}: Prop
         const removeTaskHandler = () => removeTask(task.id)
         return (
             <li key={task.id}>
-                {/*/!*<CurrenTask/>*!/  //TODO: сделасть самостоятельно!*/}
-                <input type="checkbox" checked={task.isDone}/>
-                <span>{task.title}</span>
-                {/*<Button title={'x'} onClick={() => removeTask(task.id)}/>*/}
-                <button onClick={removeTaskHandler}>x</button>
+                <CurrentTask/>
+                {/*<input type="checkbox" checked={task.isDone}/>*/}
+                {/*<span>{task.title}</span>*/}
+                {/*/!*<Button title={'x'} onClick={() => removeTask(task.id)}/>*!/*/}
+                {/*<button onClick={removeTaskHandler}>x</button>*/}
             </li>
         )
     })
